@@ -482,22 +482,55 @@ Geno’s calling centers on helping people know Jesus Christ and grow deeper in 
                   <div>
                     <h4 className="text-lg font-semibold text-[#1F3A5F]">Personal Information</h4>
                     <div className="mt-4 grid gap-4 md:grid-cols-2">
-                      <input type="text" name="Full Name" required placeholder="Full Name" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
-                      <input type="email" name="Email Address" required placeholder="Email Address" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
-                      <input type="tel" name="Phone Number" placeholder="Phone Number" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
-                      <input type="text" name="City" placeholder="City" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                      <input type="text" name="Full Name" required placeholder="Full Name" className="rounded-xl border border-slate-300 px-4 py-3" />
+                      <input type="date" name="Date Submitted" className="rounded-xl border border-slate-300 px-4 py-3" />
+                      <input type="text" name="Nickname" placeholder="Nickname" className="rounded-xl border border-slate-300 px-4 py-3" />
+                      <input type="date" name="Date of Birth" className="rounded-xl border border-slate-300 px-4 py-3" />
+                    </div>
+
+                    <div className="mt-4 grid gap-4 md:grid-cols-2">
+                      <input type="email" name="Email" placeholder="Email Address" className="rounded-xl border border-slate-300 px-4 py-3" />
+                      <input type="tel" name="Phone" placeholder="Phone Number" className="rounded-xl border border-slate-300 px-4 py-3" />
+                    </div>
+
+                    <input type="text" name="Address" placeholder="Street Address" className="mt-4 rounded-xl border border-slate-300 px-4 py-3" />
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#1F3A5F]">Volunteer Information</h4>
+                    <div className="mt-4 grid gap-2 md:grid-cols-2">
+                      {['General Volunteer','Skilled Trade','Event Volunteer','Administrative Support'].map((opt)=>(
+                        <label key={opt} className="flex items-center gap-2">
+                          <input type="checkbox" name="Volunteer Type" value={opt} /> {opt}
+                        </label>
+                      ))}
+                    </div>
+
+                    <textarea name="Skills" rows="4" placeholder="Skills / Experience" className="mt-4 rounded-xl border border-slate-300 px-4 py-3" />
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#1F3A5F]">Availability</h4>
+                    <div className="mt-4 grid gap-2 md:grid-cols-3">
+                      {['Mon','Tue','Wed','Thu','Fri','Sat'].map((d)=>(
+                        <label key={d} className="flex items-center gap-2">
+                          <input type="checkbox" name="Days Available" value={d} /> {d}
+                        </label>
+                      ))}
                     </div>
                   </div>
 
-                  <textarea name="Message" rows="5" placeholder="How would you like to serve?" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#1F3A5F]">Acknowledgment</h4>
+                    <label className="flex items-start gap-2 mt-3">
+                      <input type="checkbox" required />
+                      <span>I agree to follow all Polk County Passion Project policies and safety guidelines.</span>
+                    </label>
+                  </div>
 
-                  <button type="submit" className="mt-2 rounded-xl bg-[#1F3A5F] px-6 py-3 font-semibold text-white">
+                  <button type="submit" className="mt-2 rounded-xl bg-[#1F3A5F] px-6 py-3 text-white">
                     Submit Application
                   </button>
-
-                  <p className="text-center text-xs text-slate-500">
-                    Your information will be sent securely to polkcountypassionproject@gmail.com
-                  </p>
                 </form>
               </div>
             )}
