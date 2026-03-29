@@ -467,7 +467,7 @@ Geno’s calling centers on helping people know Jesus Christ and grow deeper in 
                   Volunteer Application
                 </h3>
                 <p className="mt-3 text-center text-sm text-slate-600">
-                  Complete the application below to volunteer with Polk County Passion Project.
+                  Complete the full application below to volunteer with Polk County Passion Project.
                 </p>
 
                 <form
@@ -482,28 +482,211 @@ Geno’s calling centers on helping people know Jesus Christ and grow deeper in 
                   <div>
                     <h4 className="text-lg font-semibold text-[#1F3A5F]">Personal Information</h4>
                     <div className="mt-4 grid gap-4 md:grid-cols-2">
-                      <input type="text" name="Full Name" required placeholder="Full Name" className="rounded-xl border border-slate-300 px-4 py-3" />
-                      <input type="date" name="Date Submitted" className="rounded-xl border border-slate-300 px-4 py-3" />
-                      <input type="text" name="Nickname" placeholder="Nickname" className="rounded-xl border border-slate-300 px-4 py-3" />
-                      <input type="date" name="Date of Birth" className="rounded-xl border border-slate-300 px-4 py-3" />
+                      <input type="text" name="Full Name" required placeholder="Full Name" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                      <input type="date" name="Date Submitted" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                      <input type="text" name="Nickname" placeholder="Nickname (if any)" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                      <input type="date" name="Date of Birth" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
                     </div>
 
+                    <div className="mt-4">
+                      <div className="mb-2 text-sm font-medium text-slate-700">Age Group</div>
+                      <div className="grid gap-2 sm:grid-cols-3">
+                        <label className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3"><input type="radio" name="Age Group" value="Under 18" />Under 18</label>
+                        <label className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3"><input type="radio" name="Age Group" value="18–64" />18–64</label>
+                        <label className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3"><input type="radio" name="Age Group" value="65+" />65+</label>
+                      </div>
+                      <p className="mt-2 text-xs text-slate-500">If under 18, a parent or guardian consent form must be completed.</p>
+                    </div>
+
+                    <div className="mt-4 grid gap-4">
+                      <input type="text" name="Street Address" placeholder="Street Address" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                      <div className="grid gap-4 md:grid-cols-3">
+                        <input type="text" name="City" placeholder="City" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                        <input type="text" name="State" placeholder="State" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                        <input type="text" name="Zip" placeholder="Zip Code" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                      </div>
+                      <div className="grid gap-4 md:grid-cols-2">
+                        <input type="email" name="Email Address" required placeholder="Email Address" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                        <input type="tel" name="Phone Number" placeholder="Phone Number" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                      </div>
+                      <div>
+                        <div className="mb-2 text-sm font-medium text-slate-700">Phone Type</div>
+                        <div className="grid gap-2 sm:grid-cols-2">
+                          <label className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3"><input type="radio" name="Phone Type" value="Cell" />Cell</label>
+                          <label className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3"><input type="radio" name="Phone Type" value="Home" />Home</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#1F3A5F]">Optional Demographic Information</h4>
+                    <p className="mt-1 text-sm text-slate-500">This information helps with grant reporting and is voluntary.</p>
                     <div className="mt-4 grid gap-4 md:grid-cols-2">
-                      <input type="email" name="Email" placeholder="Email Address" className="rounded-xl border border-slate-300 px-4 py-3" />
-                      <input type="tel" name="Phone" placeholder="Phone Number" className="rounded-xl border border-slate-300 px-4 py-3" />
+                      <div>
+                        <div className="mb-2 text-sm font-medium text-slate-700">Are you bilingual?</div>
+                        <div className="grid gap-2 sm:grid-cols-2">
+                          <label className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3"><input type="radio" name="Bilingual" value="Yes" />Yes</label>
+                          <label className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3"><input type="radio" name="Bilingual" value="No" />No</label>
+                        </div>
+                      </div>
+                      <input type="text" name="Languages" placeholder="If yes, language(s)" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
                     </div>
 
-                    <input type="text" name="Address" placeholder="Street Address" className="mt-4 rounded-xl border border-slate-300 px-4 py-3" />
+                    <div className="mt-4">
+                      <div className="mb-2 text-sm font-medium text-slate-700">Race/Ethnicity (optional)</div>
+                      <div className="grid gap-2 md:grid-cols-2">
+                        {[
+                          "American Indian/Alaskan Native",
+                          "Asian",
+                          "Black/African American",
+                          "Hispanic/Latino",
+                          "Native Hawaiian/Pacific Islander",
+                          "White",
+                          "Prefer not to say",
+                        ].map((option) => (
+                          <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3">
+                            <input type="checkbox" name="Race/Ethnicity" value={option} />
+                            {option}
+                          </label>
+                        ))}
+                      </div>
+                    </div>
                   </div>
 
                   <div>
                     <h4 className="text-lg font-semibold text-[#1F3A5F]">Volunteer Information</h4>
-                    <div className="mt-4 grid gap-2 md:grid-cols-2">
-                      {['General Volunteer','Skilled Trade','Event Volunteer','Administrative Support'].map((opt)=>(
-                        <label key={opt} className="flex items-center gap-2">
-                          <input type="checkbox" name="Volunteer Type" value={opt} /> {opt}
-                        </label>
-                      ))}
+                    <div className="mt-4">
+                      <div className="mb-2 text-sm font-medium text-slate-700">Volunteer Type</div>
+                      <div className="grid gap-2 md:grid-cols-2">
+                        {[
+                          "General Volunteer",
+                          "Skilled Trade Volunteer",
+                          "High School Volunteer",
+                          "College Volunteer",
+                          "Event Volunteer",
+                        ].map((option) => (
+                          <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3">
+                            <input type="checkbox" name="Volunteer Type" value={option} />
+                            {option}
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-4">
+                      <div className="mb-2 text-sm font-medium text-slate-700">Areas of Interest</div>
+                      <div className="grid gap-2 md:grid-cols-2">
+                        {[
+                          "Landscaping & Yard Work",
+                          "Minor Home Repairs",
+                          "Painting Projects",
+                          "Cleanup & Debris Removal",
+                          "Community Outreach",
+                          "Event Support",
+                          "Administrative / Office Help",
+                          "Prayer & Ministry Support",
+                        ].map((option) => (
+                          <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3">
+                            <input type="checkbox" name="Areas of Interest" value={option} />
+                            {option}
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+
+                    <textarea name="Skills / Certifications" rows="5" placeholder="List any trade skills, equipment operation, construction experience, first aid, ministry experience, etc." className="mt-4 rounded-xl border border-slate-300 bg-white px-4 py-3" />
+
+                    <div className="mt-4">
+                      <div className="mb-2 text-sm font-medium text-slate-700">Availability - Days</div>
+                      <div className="grid gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-6">
+                        {['Mon','Tue','Wed','Thu','Fri','Sat'].map((day) => (
+                          <label key={day} className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3">
+                            <input type="checkbox" name="Available Days" value={day} />
+                            {day}
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-4">
+                      <div className="mb-2 text-sm font-medium text-slate-700">Availability - Times</div>
+                      <div className="grid gap-2 sm:grid-cols-3">
+                        {['Morning','Afternoon','Evening'].map((time) => (
+                          <label key={time} className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3">
+                            <input type="checkbox" name="Available Times" value={time} />
+                            {time}
+                          </label>
+                        ))}
+                      </div>
+                      <input type="text" name="Seasonal Availability" placeholder="Seasonal (Specify)" className="mt-4 rounded-xl border border-slate-300 bg-white px-4 py-3 w-full" />
+                    </div>
+
+                    <div className="mt-4">
+                      <div className="mb-2 text-sm font-medium text-slate-700">How did you hear about us?</div>
+                      <div className="grid gap-2 md:grid-cols-2">
+                        {['Website','Social Media','Church','Referral','Community Event'].map((option) => (
+                          <label key={option} className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3">
+                            <input type="checkbox" name="How Did You Hear About Us" value={option} />
+                            {option}
+                          </label>
+                        ))}
+                        <input type="text" name="How Did You Hear About Us - Other" placeholder="Other" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#1F3A5F]">Emergency Contact</h4>
+                    <div className="mt-4 grid gap-4 md:grid-cols-3">
+                      <input type="text" name="Emergency Contact Name" placeholder="Name" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                      <input type="tel" name="Emergency Contact Phone" placeholder="Phone" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                      <input type="text" name="Emergency Contact Relationship" placeholder="Relationship" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#1F3A5F]">Disclosures & Acknowledgments</h4>
+                    <div className="mt-4 space-y-4 rounded-2xl bg-white p-5 ring-1 ring-slate-200">
+                      <p className="text-sm leading-7 text-slate-700">
+                        Certain volunteer roles—particularly those involving vulnerable individuals, home access, financial matters, or youth—may require a background check. By submitting this application, you acknowledge that you may be asked to consent to a background screening if required for your role.
+                      </p>
+                      <label className="flex items-start gap-3 text-sm text-slate-700">
+                        <input type="checkbox" name="Acknowledge Information is True" required className="mt-1" />
+                        <span>I affirm that the information provided is true and complete.</span>
+                      </label>
+                      <label className="flex items-start gap-3 text-sm text-slate-700">
+                        <input type="checkbox" name="Acknowledge No Guarantee of Placement" required className="mt-1" />
+                        <span>I understand that submission does not guarantee placement.</span>
+                      </label>
+                      <label className="flex items-start gap-3 text-sm text-slate-700">
+                        <input type="checkbox" name="Acknowledge Policies" required className="mt-1" />
+                        <span>I agree to follow all safety guidelines and organizational policies of Polk County Passion Project INC.</span>
+                      </label>
+                      <label className="flex items-start gap-3 text-sm text-slate-700">
+                        <input type="checkbox" name="Acknowledge Code of Ethics" required className="mt-1" />
+                        <span>I agree to the Volunteer Code of Ethics, confidentiality standards, safety procedures, and liability release described by Polk County Passion Project INC.</span>
+                      </label>
+                    </div>
+
+                    <div className="mt-4 grid gap-4 md:grid-cols-2">
+                      <input type="text" name="Applicant Signature" placeholder="Type Full Name as Signature" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                      <input type="date" name="Applicant Signature Date" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                      <input type="text" name="Code of Ethics Print Name" placeholder="Print Name" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                      <input type="date" name="Code of Ethics Date" className="rounded-xl border border-slate-300 bg-white px-4 py-3" />
+                    </div>
+                  </div>
+
+                  <button type="submit" className="mt-2 rounded-xl bg-[#1F3A5F] px-6 py-3 font-semibold text-white hover:opacity-90">
+                    Submit Volunteer Application
+                  </button>
+
+                  <p className="mt-2 text-center text-xs text-slate-500">
+                    Your information will be sent securely to polkcountypassionproject@gmail.com
+                  </p>
+                </form>
+              </div>
+            )}
                     </div>
 
                     <textarea name="Skills" rows="4" placeholder="Skills / Experience" className="mt-4 rounded-xl border border-slate-300 px-4 py-3" />
